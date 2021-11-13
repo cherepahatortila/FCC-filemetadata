@@ -13,6 +13,7 @@ app.get('/', function (req, res) {
     res.sendFile(process.cwd() + '/views/index.html');
 });
 
+//в upload.single() вставляю name файла в input 
  app.post("/api/fileanalyse", upload.single('upfile'),(req,res)=>{
    res.send({name:req.file.originalname,
    type:req.file.mimetype,
